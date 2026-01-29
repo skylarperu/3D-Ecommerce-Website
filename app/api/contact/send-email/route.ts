@@ -14,19 +14,43 @@ const contactSchema = z.object({
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
-// Configurar transporte de email con Gmail
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.GMAIL_EMAIL || '',
-    pass: process.env.GMAIL_APP_PASSWORD || '',
-  },
-});
+// Configurar transporte de email - Soporta Gmail y Spaceship SMTP
+const getTransporter = () => {
+  // Prioridad: Spaceship SMTP > Gmail
+  if (
+    process.env.SPACESHIP_SMTP_HOST &&
+    process.env.SPACESHIP_SMTP_USER &&
+    process.env.SPACESHIP_SMTP_PASSWORD
+  ) {
+    console.log('📧 Usando Spaceship SMTP');
+    return nodemailer.createTransport({
+      host: process.env.SPACESHIP_SMTP_HOST,
+      port: parseInt(process.env.SPACESHIP_SMTP_PORT || '587'),
+      secure: process.env.SPACESHIP_SMTP_SECURE === 'true', // false para TLS
+      auth: {
+        user: process.env.SPACESHIP_SMTP_USER,
+        pass: process.env.SPACESHIP_SMTP_PASSWORD,
+      },
+    });
+  }
+
+  // Fallback a Gmail
+  console.log('📧 Usando Gmail SMTP');
+  return nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.GMAIL_EMAIL || '',
+      pass: process.env.GMAIL_APP_PASSWORD || '',
+    },
+  });
+};
+
+const transporter = getTransporter();
 
 // Verificar conexión al iniciar
 transporter.verify((error, success) => {
   if (error) {
-    console.error('Error configurando email:', error);
+    console.error('❌ Error configurando email:', error);
   } else if (success) {
     console.log('✅ Servicio de email listo');
   }
