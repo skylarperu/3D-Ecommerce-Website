@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Norvex Perú - Sitio Web Educativo
 
-## Getting Started
+Sitio web moderno y responsivo para Norvex Perú, un ecosistema educativo enfocado en enseñar a emprendedores cómo construir negocios escalables, reales y facturable.
 
-First, run the development server:
+## 🚀 Características
 
-```bash
+- **Dark Mode Nativo**: Diseño oscuro elegante y moderno como estándar
+- **Glassmorphism**: Tarjetas con efecto vidrio y bordes translúcidos
+- **Micro-interacciones**: Animaciones suaves con Framer Motion
+- **Gradientes Modernos**: Colores púrpura, rosa y cian para un look premium
+- **Responsivo**: Optimizado para móvil, tablet y desktop
+- **Rendimiento**: Optimizado con Next.js 14 y TailwindCSS
+- **Accesibilidad**: Semántica HTML correcta y navegación intuitiva
+
+## 📋 Secciones del Sitio
+
+1. **Hero Section**: Titular principal con CTA y desplazamiento animado
+2. **Sobre Norvex**: Explicación del ecosistema y características principales
+3. **Programas**: Tarjetas interactivas de los programas educativos
+4. **Comunidad Discord**: Información sobre la comunidad y roles
+5. **CTA Section**: Testimonios, estadísticas y llamadas a acción
+6. **Pricing**: Planes de membresía con detalles de características
+7. **Contacto**: Formulario de contacto y múltiples canales
+8. **Footer**: Enlaces, redes sociales y disclaimer legal
+
+## 🛠️ Stack Tecnológico
+
+- **Next.js 14**: Framework React moderno
+- **React 18**: Librería de UI
+- **Framer Motion**: Animaciones avanzadas
+- **TailwindCSS**: Estilos y diseño responsivo
+
+## 📦 Instalación
+
+\`\`\`bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+\`\`\`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🌐 URLs Principales
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Home**: \`/\` - Página principal
+- **Pricing**: \`/pricing\` - Planes de membresía
+- **Contacto**: \`/contact\` - Formulario de contacto
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🎨 Paleta de Colores
 
-## Learn More
+- **Primario**: Púrpura (\`#a855f7\`)
+- **Secundario**: Rosa (\`#ec4899\`)
+- **Tertiary**: Cian (\`#06b6d4\`)
+- **Fondo**: Gradiente oscuro
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Versión 1.0.0 - Enero 2026

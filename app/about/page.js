@@ -1,98 +1,267 @@
-import NavbarUser from '@/components/NavbarUser'
-import React from 'react'
+'use client';
 
-const aboutPage = () => {
+import { motion } from 'framer-motion';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+import SectionTitle from '../../components/SectionTitle';
+import Button from '../../components/Button';
+
+export default function AboutPage() {
+  const values = [
+    {
+      icon: '🎯',
+      title: 'Transparencia',
+      description: 'No ocultamos nada. Sabes exactamente qué obtendrás y cómo funciona.',
+    },
+    {
+      icon: '💪',
+      title: 'Empoderamiento',
+      description: 'Te damos herramientas para ser independiente y autosuficiente.',
+    },
+    {
+      icon: '🚀',
+      title: 'Escalabilidad',
+      description: 'Enfoque en crear sistemas que crecen sin depender solo de ti.',
+    },
+    {
+      icon: '🤝',
+      title: 'Comunidad',
+      description: 'No estás solo. Conecta, aprende y crece con otros emprendedores.',
+    },
+  ];
+
+  const timeline = [
+    {
+      year: '2024',
+      title: 'Fundación de Norvex',
+      description: 'Se crea el concepto de Norvex como ecosistema educativo.',
+    },
+    {
+      year: '2025',
+      title: 'Lanzamiento',
+      description: 'Se abre el servidor Discord con primeros 100 miembros.',
+    },
+    {
+      year: '2025',
+      title: 'Crecimiento',
+      description: 'Alcanzamos 5000+ miembros activos en la comunidad.',
+    },
+    {
+      year: '2026',
+      title: 'Expansión',
+      description: 'Lanzamos sitio web oficial y nuevos programas educativos.',
+    },
+  ];
+
   return (
-    <div>
-        <NavbarUser />
-    <section className="py-10 lg:py-20 bg-stone-100 font-poppins dark:bg-gray-800">
-        <div className="max-w-6xl py-4 mx-auto lg:py-6 md:px-6">
-            <div className="flex flex-wrap ">
-                <div className="w-full px-4 mb-10 lg:w-1/2 lg:mb-0 ">
-                    <div className="lg:max-w-md">
-                        <div className="px-4 pl-4 mb-6 border-l-4 border-blue-500">
-                            <span className="text-sm text-gray-600 uppercase dark:text-gray-400">Who we are?</span>
-                            <h1 className="mt-2 text-3xl font-black text-gray-700 md:text-5xl dark:text-gray-300">
-                                About Us
-                            </h1>
-                        </div>
-                        <p className="px-4 mb-10 text-base leading-7 text-gray-500 dark:text-gray-400">
-                        Welcome to EVERSE! We're thrilled to have you explore our virtual universe. If you have any questions, feedback, or need assistance, our team is here to help.
-                        </p>
-                        <div className="flex flex-wrap items-center">
-                            <div className="w-full px-4 mb-6 sm:w-1/2 md:w-1/2 lg:mb-6">
-                                <div className="p-6 bg-white dark:bg-gray-900">
-                                    <span className="text-blue-500 dark:text-blue-400">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" className="w-10 h-10"
-                                            fill="currentColor" viewBox="0 0 16 16">
-                                            <path
-                                                d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
-                                            <path
-                                                d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
-                                        </svg>
-                                    </span>
-                                    <p className="mt-4 mb-2 text-3xl font-bold text-gray-700 dark:text-gray-400">2097
-                                    </p>
-                                    <h2 className="text-sm text-gray-700 dark:text-gray-400">Projects and Plans</h2>
-                                </div>
-                            </div>
-                            <div className="w-full px-4 mb-6 sm:w-1/2 md:w-1/2 lg:mb-6">
-                                <div className="p-6 bg-white dark:bg-gray-900">
-                                    <span className="text-blue-500 dark:text-blue-400">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" className="w-10 h-10"
-                                            fill="currentColor" viewBox="0 0 16 16">
-                                            <path
-                                                d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                            <path fill-rule="evenodd"
-                                                d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z" />
-                                            <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
-                                        </svg>
-                                    </span>
-                                    <p className="mt-4 mb-2 text-3xl font-bold text-gray-700 dark:text-gray-400">3,590
-                                    </p>
-                                    <h2 className="text-sm text-gray-700 dark:text-gray-400">Helped people</h2>
-                                </div>
-                            </div>
-                            <div className="w-full px-4 mb-6 sm:w-1/2 md:w-1/2 lg:mb-6">
-                                <div className="p-6 bg-white dark:bg-gray-900">
-                                    <span className="text-blue-500 dark:text-blue-400">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" className="w-10 h-10"
-                                            fill="currentColor" viewBox="0 0 16 16">
-                                            <path
-                                                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                        </svg>
-                                    </span>
-                                    <p className="mt-4 mb-2 text-3xl font-bold text-gray-700 dark:text-gray-400">74
-                                    </p>
-                                    <h2 className="text-sm text-gray-700 dark:text-gray-400">Volunteer</h2>
-                                </div>
-                            </div>
-                            <div className="w-full px-4 mb-6 sm:w-1/2 md:w-1/2 lg:mb-6">
-                                <div className="p-6 bg-white dark:bg-gray-900">
-                                    <span className="text-blue-500 dark:text-blue-400">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" className="w-10 h-10"
-                                            fill="currentColor"  viewBox="0 0 16 16">
-                                            <path
-                                                d="M6 .5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H9v1.07a7.001 7.001 0 0 1 3.274 12.474l.601.602a.5.5 0 0 1-.707.708l-.746-.746A6.97 6.97 0 0 1 8 16a6.97 6.97 0 0 1-3.422-.892l-.746.746a.5.5 0 0 1-.707-.708l.602-.602A7.001 7.001 0 0 1 7 2.07V1h-.5A.5.5 0 0 1 6 .5zm2.5 5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9V5.5zM.86 5.387A2.5 2.5 0 1 1 4.387 1.86 8.035 8.035 0 0 0 .86 5.387zM11.613 1.86a2.5 2.5 0 1 1 3.527 3.527 8.035 8.035 0 0 0-3.527-3.527z" />
-                                        </svg>
-                                    </span>
-                                    <p className="mt-4 mb-2 text-3xl font-bold text-gray-700 dark:text-gray-400">100
-                                    </p>
-                                    <h2 className="text-sm text-gray-700 dark:text-gray-400">Timing</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="w-full px-4 mb-10 lg:w-1/2 lg:mb-0">
-                    <img src="https://i.postimg.cc/9MW8G96J/pexels-the-coach-space-2977565.jpg" alt=""
-                        className="relative z-40 object-cover w-full h-full rounded" />
-                </div>
-            </div>
-        </div>
-    </section>
-    </div>
-  )
-}
+    <main className="w-full overflow-hidden">
+      <Navbar />
 
-export default aboutPage
+      {/* Header */}
+      <section className="section-container pt-32 relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <motion.div
+            animate={{ opacity: [0.2, 0.4, 0.2] }}
+            transition={{ duration: 8, repeat: Infinity }}
+            className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl"
+          />
+        </div>
+
+        <div className="max-w-section mx-auto relative z-10 text-center mb-20">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-5xl md:text-6xl font-bold mb-6"
+          >
+            Nuestra <span className="gradient-text">Historia</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-xl text-white/70 max-w-2xl mx-auto"
+          >
+            Cómo Norvex nació de la frustración de no encontrar educación real para emprendedores.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* Our Story */}
+      <section className="section-container">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="glass p-8 md:p-12 rounded-2xl mb-20"
+          >
+            <h2 className="text-3xl font-bold text-white mb-6">La Historia detrás de Norvex</h2>
+
+            <div className="space-y-4 text-white/80 leading-relaxed">
+              <p>
+                En el 2024, después de años viendo cómo emprendedores caían en MLMs, estafas educativas y promesas falsas, decidimos crear algo diferente.
+              </p>
+
+              <p>
+                Norvex nace de la frustración de no encontrar un lugar donde aprender de verdad. No queremos vender sueños, queremos enseñar sistemas que funcionan en el mundo real.
+              </p>
+
+              <p>
+                Nuestro enfoque es simple: educación honesta, mentoría de calidad, y una comunidad que te empuja a crecer. Sin esquemas piramidales, sin falsas promesas, solo trabajo duro y resultados reales.
+              </p>
+
+              <p>
+                Hoy, con más de 5000 miembros activos, Norvex es la comunidad educativa más grande para emprendedores en Perú, y queremos seguir creciendo.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="section-container bg-gradient-primary rounded-3xl my-12 relative overflow-hidden">
+        <div className="max-w-section mx-auto">
+          <SectionTitle
+            title="Nuestros Valores"
+            subtitle="Lo que creemos y lo que guía nuestras decisiones"
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {values.map((value, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                viewport={{ once: true }}
+                className="glass p-8 rounded-xl"
+              >
+                <div className="text-4xl mb-4">{value.icon}</div>
+                <h3 className="text-xl font-bold text-white mb-3">{value.title}</h3>
+                <p className="text-white/70">{value.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline */}
+      <section className="section-container">
+        <div className="max-w-4xl mx-auto">
+          <SectionTitle
+            title="Nuestra Evolución"
+            subtitle="Cómo hemos crecido desde la idea hasta hoy"
+          />
+
+          <div className="space-y-8">
+            {timeline.map((event, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                viewport={{ once: true }}
+                className="glass p-8 rounded-xl"
+              >
+                <div className="flex flex-col md:flex-row gap-8 items-start">
+                  <div className="flex-shrink-0 w-32">
+                    <div className="text-3xl font-bold gradient-text">{event.year}</div>
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="text-xl font-bold text-white mb-2">{event.title}</h3>
+                    <p className="text-white/70">{event.description}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="section-container">
+        <div className="max-w-4xl mx-auto">
+          <SectionTitle
+            title="Preguntas sobre Norvex"
+            subtitle="Respuestas a las dudas más comunes"
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              {
+                q: '¿Es Norvex una estafa?',
+                a: 'No. Somos una empresa legítima registrada. Puedes verificar nuestro registro y legalidad. Tenemos miles de miembros verificables.',
+              },
+              {
+                q: '¿Dónde está ubicada Norvex?',
+                a: 'Norvex Perú está basada en Perú, aunque servimos a emprendedores de toda Latam y el mundo hispanohablante.',
+              },
+              {
+                q: '¿Cuál es el modelo de negocio?',
+                a: 'Ofrecemos membresías a programas educativos. Los miembros pagan por acceso a contenido, mentoría y comunidad. Nada más.',
+              },
+              {
+                q: '¿Hay garantía de dinero de vuelta?',
+                a: 'Sí, garantía de 7 días. Si no te gusta en la primera semana, devolvemos tu dinero sin preguntas.',
+              },
+              {
+                q: '¿Por qué es tan asequible?',
+                a: 'Creemos en democratizar la educación. Queremos que cualquier emprendedor tenga acceso, no solo los ricos.',
+              },
+              {
+                q: '¿Qué hace Norvex diferente?',
+                a: 'Transparencia total, mentores reales, comunidad activa, y enfoque en negocios aplicables. No vendemos ilusiones.',
+              },
+            ].map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: idx * 0.05 }}
+                viewport={{ once: true }}
+                className="glass p-6 rounded-xl"
+              >
+                <h4 className="text-white font-bold mb-3">{item.q}</h4>
+                <p className="text-white/70 text-sm">{item.a}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="section-container">
+        <div className="max-w-4xl mx-auto glass p-12 rounded-3xl text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl font-bold text-white mb-6"
+          >
+            ¿Quieres ser parte de esta misión?
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-white/70 mb-8 text-lg"
+          >
+            Únete a nosotros y sé parte de una comunidad que construye negocios reales.
+          </motion.p>
+
+          <Button variant="primary" size="lg">
+            Unirme a Norvex
+          </Button>
+        </div>
+      </section>
+
+      <Footer />
+    </main>
+  );
+}
